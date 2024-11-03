@@ -1,3 +1,24 @@
+##########################################################################################################################################
+
+#	This script was created as a step in a program to forecast workflow volumes for call center employees.
+#	The particular forecast models used were chosen in a separate analysis performed in a jupyter notebook file.
+#	(An example of this work can be seen in this repository here: https://github.com/nathanielkramer/Code-samples/blob/main/Python-samples/NAT-850%20Erlang%20Forecast-Implementation%20notebook.ipynb)
+
+#	This script connects to a SQL database, executes a query to pull the most recent weekly volume data into a pandas dataframe,
+#	converts this data to a darts timeseries object, and then forecasts volume for the next two weeks. Then, these weekly forecasts
+#	are converted to half hourly-level forecasts by calculating the average distribution of weekly volume across each half-hour period
+#	for the previous 8 weeks, using Z-score to exclude outliers and avoid skewing the distribution. Finally, this distribution is applied
+# 	to the weekly-level forecast volume to convert it to a half hourly level-forecast. The final step in the script exports the forecast
+#	to SQL server and executes a stored procedure in the SQL database to perform further processing on the output data.
+
+##########################################################################################################################################
+
+
+
+
+
+
+
 # ### Selected Forecast Models
 # Model selection should be verified periodically to ensure that we are still 
 # using the best models for capturing forecast volume in calls and chats. 
